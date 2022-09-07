@@ -15,31 +15,23 @@ public class Card {
     public static List<String> getValidValues() {
         return Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A");
         //stop scenarioreturn Arrays.asList("6", "5", "3", "6", "2", "4", "6", "3", "3", "J", "Q", "K", "A");
-
     }
-
     public static List<String> getValidSuits() {
         return Arrays.asList("H", "D", "S", "C");
     }
 
-
     public void setValue(String value) {
         this.value = value;
     }
-
     public String getSuit() {
         return suit;
     }
-
     public void setSuit(String suit) {
         this.suit = suit;
-
     }
-
     public String getStrValue() {
         return value;
     }
-
     public int getIntValue() {
         String valueStringSam = this.value;
         if (valueStringSam.equals("J") || valueStringSam.equals("Q") || valueStringSam.equals("K")) {
