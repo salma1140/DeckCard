@@ -33,13 +33,12 @@ public class Game {
                 if (player1.getCards().stream().mapToInt(Card::getIntValue).sum() > player2.getCards().stream().mapToInt(Card::getIntValue).sum()) {
                     gameResult.setWinner(player1);
                     gameResult.setLooser(player2);
-                } else {
+                }else {
                     gameResult.setWinner(player2);
                     gameResult.setLooser(player1);
                 }
                 return gameResult;
             }
-
             if (activePlayer.getName().equals(player1.getName())){
                 if(!gameRules.isPlayer1Total17AndHigher(player1)) {
                     player1.addCardToPlayer(deckList.get(++listIndex));
@@ -53,8 +52,7 @@ public class Game {
                     activePlayer = player2;
                     player1DrawCardStatus = 1;
                 }
-            }
-            else {
+            }else {
                     if(!gameRules.isPlayer2TotalHigherThanPlayer1(player1, player2)) {
                         player2.addCardToPlayer(deckList.get(++listIndex));
                         activePlayer = player1;
@@ -90,8 +88,5 @@ public class Game {
 
         activePlayer = player1;
         return continuePlaying(listIndex);
-
-
-
     }
 }
